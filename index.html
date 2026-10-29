@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- bot.js replaces this title using BOT_NAME -->
+  <title>Rubi | Rebana Ubi Guide</title>
+  <meta name="description" content="Rubi is a rule-based chatbot that guides you through the rebana ubi, a traditional Malay drum.">
+  <link rel="icon" href="assets/avatar.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <img class="site-logo" src="assets/avatar.png" alt="" width="44" height="44">
+    <div>
+      <h1><span data-bot-name>Rubi</span></h1>
+      <p class="tagline">Your guide to the rebana ubi</p>
+    </div>
+  </header>
+
+  <!-- Tabs: the chat and the playable drum are on separate tabs -->
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button type="button" class="tab" role="tab" id="tabChat" aria-controls="panelChat" aria-selected="true">💬 Chat</button>
+    <button type="button" class="tab" role="tab" id="tabDrum" aria-controls="panelDrum" aria-selected="false" tabindex="-1">🥁 Play the drum</button>
+  </nav>
+
+  <main class="layout tab-panel" id="panelChat" role="tabpanel" aria-labelledby="tabChat">
+
+    <!-- Avatar panel: avatar, spoken caption, voice toggle -->
+    <aside class="avatar-panel" id="avatarPanel" aria-label="Avatar, voice and drum pads">
+      <div class="avatar-frame">
+        <img id="avatarImg" src="assets/avatar.png"
+             alt="Rubi, a cartoon rebana ubi drum with a smiling face holding two drumsticks">
+      </div>
+
+      <div class="speech-box">
+        <p class="speech-label"><span data-bot-name>Rubi</span> says</p>
+        <p class="speech-caption" id="speechCaption">…</p>
+      </div>
+
+      <div class="voice-controls">
+        <button type="button" id="muteBtn" class="btn-voice" aria-pressed="false">🔊 Voice on</button>
+        <p class="voice-status" id="voiceStatus" role="status"></p>
+      </div>
+    </aside>
+
+    <!-- Chat window -->
+    <section class="chat" aria-label="Chat">
+      <div class="chat-header">
+        <span class="chat-title">Chat with <span data-bot-name>Rubi</span></span>
+        <span class="chat-online">online</span>
+      </div>
+
+      <div class="chat-log" id="chatLog" role="log" aria-live="polite"></div>
+
+      <form class="chat-input" id="chatForm" autocomplete="off">
+        <label for="userInput" class="visually-hidden">Type your message</label>
+        <input type="text" id="userInput" maxlength="300" placeholder="Type your message…">
+        <button type="submit" class="btn-send">Send</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Drum tab: one drum face with two playing zones -->
+  <section class="drum-panel tab-panel" id="panelDrum" role="tabpanel" aria-labelledby="tabDrum" hidden>
+    <div class="drum-card">
+      <h2>Play the rebana ubi</h2>
+      <p class="drum-intro">Hit the inner circle or the outer ring of the drum, or press its key. In real life a rebana ubi is played by two people, one on each side of the drum.</p>
+
+      <!-- The drum seen from above. The inner button sits on top of the outer
+           one, so a click on the centre plays "inner" and a click on the ring
+           plays "outer". data-sound must match a key in DRUM_SOUNDS (bot.js). -->
+      <div class="drum">
+        <button type="button" class="drum-zone drum-outer" data-sound="outer" aria-label="Outer drum (edge of the skin), key A">
+          <span class="zone-label">Outer <kbd>A</kbd></span>
+        </button>
+        <button type="button" class="drum-zone drum-inner" data-sound="inner" aria-label="Inner drum (centre of the skin), key S">
+          <span class="zone-label">Inner <kbd>S</kbd></span>
+        </button>
+      </div>
+
+      <button type="button" class="btn-rhythm" data-sound="rhythm">▶ Play a rhythm <kbd>D</kbd></button>
+      <p class="pad-status" id="padStatus" role="status"></p>
+      <p class="drum-note">You can also type “hit the drum”, “hit the outer drum” or “play a rhythm” in the chat.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    Introduction to AI assignment prototype · Sources are listed in the chat (type “sources”)
+  </footer>
+
+  <!-- Plain script tags (no fetch), so the site also works from file:// -->
+  <script src="knowledge.js"></script>
+  <script src="bot.js"></script>
+</body>
+</html>

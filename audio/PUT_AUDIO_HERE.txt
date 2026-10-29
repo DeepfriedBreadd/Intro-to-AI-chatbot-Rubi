@@ -1,0 +1,12 @@
+PLACEHOLDER — add your real rebana ubi recordings here.
+
+Expected files (names must match DRUM_SOUNDS in bot.js):
+  inner.mp3   – one hit on the centre of the skin   (inner circle, key S, typed "hit the drum")
+  outer.mp3   – one hit near the edge of the skin   (outer ring,   key A, typed "hit the outer drum")
+  rhythm.mp3  – a short rhythm clip                 (rhythm button, key D, typed "play a rhythm")
+
+Until these exist, Rubi plays a synthesised stand-in and says so.
+Keep single hits short (under 5 seconds) and record or license the
+clips yourself; note the source in README.md.
+If you rename the zones, update index.html (data-sound, labels) and
+DRUM_SOUNDS in bot.js together.
