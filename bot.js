@@ -347,6 +347,12 @@ function findSection(tokens) {
  * 5. MESSAGE HANDLING
  * ===================================================================== */
 
+/** Voice commands. Checked in chat and at the name prompt, so "mute" never becomes a name. */
+const MUTE_COMMAND = /^(mute|be quiet|stop talking|shush|shh+|voice off|sound off|silence)( please)?$/;
+const UNMUTE_COMMAND = /^(unmute|voice on|sound on|speak|talk|speak again|talk to me)( please)?$/;
+/** Chat commands that make no sense before we know the user's name. */
+const EARLY_COMMAND = /^(menu|help|topics|areas|show (me )?(the )?(menu|topics)|sources|references)( please)?$/;
+
 /** Entry point for everything the user types. */
 function handleUserMessage(rawText) {
   // ---- Stage 1: we still need the user's name ----
@@ -450,12 +456,12 @@ function handleUserMessage(rawText) {
     return;
   }
 
-  if (/^(mute|be quiet|stop talking|shush|shh+|voice off|sound off|silence)( please)?$/.test(clean)) {
+  if (MUTE_COMMAND.test(clean)) {
     setMuted(true);
     botSay([{ type: "text", text: `Okay, ${state.userName}, I'll stay quiet. Type "unmute" or use the voice button to hear me again.` }]);
     return;
   }
-  if (/^(unmute|voice on|sound on|speak|talk|speak again|talk to me)( please)?$/.test(clean)) {
+  if (UNMUTE_COMMAND.test(clean)) {
     setMuted(false);
     botSay([{ type: "text", text: `My voice is back on, ${state.userName}!` }]);
     return;
@@ -574,6 +580,25 @@ function handleNameAnswer(rawText) {
   // A greeting instead of a name
   if (/^(hi+|hello+|hey+|hai|hallo|salam|assalamualaikum|good (morning|afternoon|evening))$/.test(tokens.join(" "))) {
     botSay([{ type: "text", text: "Hello to you too! What should I call you?" }]);
+    return;
+  }
+
+  // A voice command instead of a name: obey it, then ask again
+  const said = tokens.join(" ");
+  if (MUTE_COMMAND.test(said)) {
+    setMuted(true);
+    botSay([{ type: "text", text: "Okay, I'll stay quiet. Type \"unmute\" or use the voice button to hear me again. Now, what's your name?" }]);
+    return;
+  }
+  if (UNMUTE_COMMAND.test(said)) {
+    setMuted(false);
+    botSay([{ type: "text", text: "My voice is back on! What's your name?" }]);
+    return;
+  }
+
+  // A chat command instead of a name
+  if (EARLY_COMMAND.test(said)) {
+    botSay([{ type: "text", text: "I'll show you everything I know right after we're introduced. What's your name?" }]);
     return;
   }
 
