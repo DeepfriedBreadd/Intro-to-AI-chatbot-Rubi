@@ -1,0 +1,213 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1620 1080" width="1620" height="1080" font-family="Segoe UI, Arial, sans-serif">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#000000"/></marker></defs>
+<rect width="1620" height="1080" fill="#ffffff"/>
+<text x="810.0" y="40" text-anchor="middle" font-size="26" font-weight="700" fill="#000000">Semantic network: Rubi, the rebana ubi expert system</text>
+<text x="810.0" y="64" text-anchor="middle" font-size="14" fill="#000000">Arrows read: subject → relation → object.</text>
+<line x1="733.0" y1="487.5" x2="229.2" y2="334.5" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="165.0" y1="295.5" x2="165.0" y2="245.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="165.0" y1="187.0" x2="165.0" y2="141.5" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="790.7" y1="483.0" x2="568.7" y2="316.5" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="515.6" y1="275.5" x2="402.5" y2="185.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="811.2" y1="483.0" x2="563.4" y2="165.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="758.3" y1="483.0" x2="431.3" y2="335.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="829.6" y1="483.0" x2="738.5" y2="160.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="844.3" y1="483.0" x2="871.5" y2="250.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="862.0" y1="483.0" x2="1060.2" y2="150.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="875.5" y1="483.0" x2="1125.4" y2="222.5" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="896.9" y1="483.0" x2="1172.9" y2="303.5" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="936.2" y1="483.0" x2="1170.0" y2="393.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="1129.5" y1="120.0" x2="1417.4" y2="120.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="1215.2" y1="201.0" x2="1421.0" y2="201.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="1300.1" y1="282.0" x2="1392.5" y2="282.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="1324.3" y1="363.0" x2="1424.5" y2="363.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="764.1" y1="557.0" x2="501.5" y2="685.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="227.0" y1="707.9" x2="365.2" y2="712.5" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="230.6" y1="777.8" x2="365.2" y2="737.4" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="184.2" y1="885.5" x2="395.0" y2="745.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="440.0" y1="743.0" x2="440.0" y2="818.5" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="452.2" y1="859.5" x2="496.2" y2="930.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="415.6" y1="859.5" x2="277.5" y2="970.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="824.6" y1="557.0" x2="752.5" y2="730.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="740.0" y1="788.0" x2="740.0" y2="832.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="860.0" y1="557.0" x2="953.8" y2="730.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="970.0" y1="788.0" x2="970.0" y2="840.5" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="926.0" y1="881.5" x2="797.0" y2="938.7" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="970.0" y1="881.5" x2="970.0" y2="934.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="907.3" y1="557.0" x2="1125.5" y2="677.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="1252.8" y1="707.0" x2="1404.8" y2="707.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="883.5" y1="557.0" x2="1144.7" y2="779.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="1263.5" y1="809.0" x2="1426.2" y2="809.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="1469.0" y1="828.5" x2="1469.0" y2="881.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="1276.1" y1="391.0" x2="1443.9" y2="558.0" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+<ellipse cx="840" cy="520" rx="105.0" ry="35.0" fill="#ffffff" stroke="#000000" stroke-width="3"/>
+<text x="840" y="528" text-anchor="middle" font-size="22" font-weight="700" fill="#000000" letter-spacing="1">REBANA UBI</text>
+<rect x="87.1" y="102.5" width="155.8" height="35.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="165" y="125.0" text-anchor="middle" font-size="13" fill="#000000">Musical instrument</text>
+<rect x="87.1" y="189.0" width="155.8" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="165" y="211.5" text-anchor="middle" font-size="13" fill="#000000">Membranophone</text>
+<text x="165" y="228.5" text-anchor="middle" font-size="13" fill="#000000">(drum with a skin)</text>
+<rect x="104.8" y="297.5" width="120.3" height="35.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="165" y="320.0" text-anchor="middle" font-size="13" fill="#000000">Rebana family</text>
+<rect x="283.6" y="129.0" width="162.9" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="365" y="151.5" text-anchor="middle" font-size="13" fill="#000000">East Coast,</text>
+<text x="365" y="168.5" text-anchor="middle" font-size="13" fill="#000000">Peninsular Malaysia</text>
+<rect x="276.4" y="279.0" width="177.1" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="365" y="301.5" text-anchor="middle" font-size="13" fill="#000000">Name: rebana + ubi</text>
+<text x="365" y="318.5" text-anchor="middle" font-size="13" fill="#000000">(‘ubi’ = tuber, root)</text>
+<rect x="497.6" y="277.5" width="84.8" height="35.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="540" y="300.0" text-anchor="middle" font-size="13" fill="#000000">Kelantan</text>
+<rect x="483.4" y="109.0" width="113.2" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="540" y="131.5" text-anchor="middle" font-size="13" fill="#000000">Arab traders</text>
+<text x="540" y="148.5" text-anchor="middle" font-size="13" fill="#000000">(c. 1890s)</text>
+<rect x="634.4" y="104.0" width="191.3" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="730" y="126.5" text-anchor="middle" font-size="13" fill="#000000">Size: about 1 m high,</text>
+<text x="730" y="143.5" text-anchor="middle" font-size="13" fill="#000000">face about 70 cm across</text>
+<rect x="786.5" y="194.0" width="177.1" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="875" y="216.5" text-anchor="middle" font-size="13" fill="#000000">Bright paint and the</text>
+<text x="875" y="233.5" text-anchor="middle" font-size="13" fill="#000000">Kelantan coat of arms</text>
+<rect x="1028.5" y="94.0" width="99.0" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="1078" y="116.5" text-anchor="middle" font-size="13" fill="#000000">Drum face</text>
+<text x="1078" y="133.5" text-anchor="middle" font-size="13" fill="#000000">(2 layers)</text>
+<rect x="1078.8" y="183.5" width="134.5" height="35.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="1146" y="206.0" text-anchor="middle" font-size="13" fill="#000000">Body (temelang)</text>
+<rect x="1113.9" y="264.5" width="184.2" height="35.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="1206" y="287.0" text-anchor="middle" font-size="13" fill="#000000">Rattan ring (peleting)</text>
+<rect x="1173.7" y="337.0" width="148.7" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="1248" y="359.5" text-anchor="middle" font-size="13" fill="#000000">Wedges: 14 baji +</text>
+<text x="1248" y="376.5" text-anchor="middle" font-size="13" fill="#000000">14 baji anak</text>
+<rect x="1421.4" y="102.5" width="113.2" height="35.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="1478" y="125.0" text-anchor="middle" font-size="13" fill="#000000">Buffalo hide</text>
+<rect x="1425.0" y="183.5" width="106.1" height="35.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="1478" y="206.0" text-anchor="middle" font-size="13" fill="#000000">Merbau wood</text>
+<rect x="1396.5" y="256.0" width="162.9" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="1478" y="278.5" text-anchor="middle" font-size="13" fill="#000000">Manau and sega emas</text>
+<text x="1478" y="295.5" text-anchor="middle" font-size="13" fill="#000000">rattan, nylon rope</text>
+<rect x="1428.5" y="345.5" width="99.0" height="35.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="1478" y="368.0" text-anchor="middle" font-size="13" fill="#000000">Leban wood</text>
+<rect x="369.2" y="689.0" width="141.6" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="440" y="711.5" text-anchor="middle" font-size="13" fill="#000000">Master craftsmen</text>
+<text x="440" y="728.5" text-anchor="middle" font-size="13" fill="#000000">(Adiguru Kraf)</text>
+<rect x="55.0" y="679.0" width="170.0" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="140" y="701.5" text-anchor="middle" font-size="13" fill="#000000">Mat Yaacob bin Awang</text>
+<text x="140" y="718.5" text-anchor="middle" font-size="13" fill="#000000">Besar (b. 1942)</text>
+<rect x="51.5" y="779.0" width="177.1" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="140" y="801.5" text-anchor="middle" font-size="13" fill="#000000">Tuan Haji Mahmood,</text>
+<text x="140" y="818.5" text-anchor="middle" font-size="13" fill="#000000">‘Pak Mud’ (1930–1998)</text>
+<rect x="73.5" y="887.5" width="162.9" height="35.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="155" y="910.0" text-anchor="middle" font-size="13" fill="#000000">Kraftangan Malaysia</text>
+<rect x="376.3" y="822.5" width="127.4" height="35.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="440" y="845.0" text-anchor="middle" font-size="13" fill="#000000">Making process</text>
+<rect x="390.9" y="934.0" width="248.1" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="515" y="956.5" text-anchor="middle" font-size="13" fill="#000000">Dry hide → turn body on lathe →</text>
+<text x="515" y="973.5" text-anchor="middle" font-size="13" fill="#000000">cut wedges → fit, tie and tune</text>
+<rect x="130.2" y="974.0" width="219.7" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="240" y="996.5" text-anchor="middle" font-size="13" fill="#000000">‘Mengambil’: tying the hide</text>
+<text x="240" y="1013.5" text-anchor="middle" font-size="13" fill="#000000">on (hardest step)</text>
+<rect x="644.4" y="734.0" width="191.3" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="740" y="756.5" text-anchor="middle" font-size="13" fill="#000000">Performances, harvest</text>
+<text x="740" y="773.5" text-anchor="middle" font-size="13" fill="#000000">festivals, competitions</text>
+<rect x="881.5" y="734.0" width="177.1" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="970" y="756.5" text-anchor="middle" font-size="13" fill="#000000">Kelantan identity and</text>
+<text x="970" y="773.5" text-anchor="middle" font-size="13" fill="#000000">intangible heritage</text>
+<rect x="669.2" y="836.0" width="141.6" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="740" y="858.5" text-anchor="middle" font-size="13" fill="#000000">Gelanggang Seni,</text>
+<text x="740" y="875.5" text-anchor="middle" font-size="13" fill="#000000">Kota Bharu</text>
+<rect x="913.4" y="844.5" width="113.2" height="35.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="970" y="867.0" text-anchor="middle" font-size="13" fill="#000000">Preservation</text>
+<rect x="687.0" y="938.0" width="106.1" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="740" y="960.5" text-anchor="middle" font-size="13" fill="#000000">Muzium Kraf</text>
+<text x="740" y="977.5" text-anchor="middle" font-size="13" fill="#000000">collection</text>
+<rect x="877.9" y="938.0" width="184.2" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="970" y="960.5" text-anchor="middle" font-size="13" fill="#000000">Training and community</text>
+<text x="970" y="977.5" text-anchor="middle" font-size="13" fill="#000000">groups (Amok Perdana)</text>
+<rect x="1109.2" y="681.0" width="141.6" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="1180" y="703.5" text-anchor="middle" font-size="13" fill="#000000">Two players,</text>
+<text x="1180" y="720.5" text-anchor="middle" font-size="13" fill="#000000">one on each side</text>
+<rect x="1408.8" y="681.0" width="120.3" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="1469" y="703.5" text-anchor="middle" font-size="13" fill="#000000">Hand or</text>
+<text x="1469" y="720.5" text-anchor="middle" font-size="13" fill="#000000">padded beater</text>
+<rect x="1098.5" y="783.0" width="162.9" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="1180" y="805.5" text-anchor="middle" font-size="13" fill="#000000">Ensemble:</text>
+<text x="1180" y="822.5" text-anchor="middle" font-size="13" fill="#000000">6 drums, 12 players</text>
+<rect x="1430.2" y="791.5" width="77.7" height="35.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="1469" y="814.0" text-anchor="middle" font-size="13" fill="#000000">Rhythms</text>
+<rect x="1376.9" y="885.0" width="184.2" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="1469" y="907.5" text-anchor="middle" font-size="13" fill="#000000">Messages between</text>
+<text x="1469" y="924.5" text-anchor="middle" font-size="13" fill="#000000">villages (in the past)</text>
+<rect x="1381.9" y="562.0" width="184.2" height="52.0" rx="10" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="1474" y="584.5" text-anchor="middle" font-size="13" fill="#000000">Tuning: wedges are</text>
+<text x="1474" y="601.5" text-anchor="middle" font-size="13" fill="#000000">hammered in to tighten</text>
+<rect x="369.6" y="389.8" width="142.3" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="440.8" y="401.8" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">is-a (largest member)</text>
+<rect x="147.4" y="261.2" width="35.2" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="165.0" y="273.2" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">is-a</text>
+<rect x="147.4" y="155.2" width="35.2" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="165.0" y="167.2" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">is-a</text>
+<rect x="609.7" y="377.4" width="104.5" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="661.9" y="389.4" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">originates-from</text>
+<rect x="422.6" y="221.2" width="73.0" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="459.1" y="233.2" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">located-in</text>
+<rect x="596.3" y="289.6" width="142.3" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="667.4" y="301.6" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">said to be brought by</text>
+<rect x="538.4" y="388.2" width="60.4" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="568.6" y="400.2" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">has-name</text>
+<rect x="733.9" y="286.7" width="85.6" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="776.7" y="298.7" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">has-property</text>
+<rect x="811.0" y="338.9" width="98.2" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="860.1" y="350.9" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">decorated-with</text>
+<rect x="946.7" y="280.9" width="60.4" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="976.9" y="292.9" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">has-part</text>
+<rect x="990.2" y="322.9" width="60.4" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1020.4" y="334.9" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">has-part</text>
+<rect x="1026.8" y="369.9" width="60.4" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1057.0" y="381.9" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">has-part</text>
+<rect x="1041.6" y="421.8" width="60.4" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1071.8" y="433.8" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">has-part</text>
+<rect x="1246.4" y="111.0" width="54.1" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1273.5" y="123.0" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">made-of</text>
+<rect x="1291.0" y="192.0" width="54.1" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1318.1" y="204.0" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">made-of</text>
+<rect x="1319.3" y="273.0" width="54.1" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1346.3" y="285.0" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">made-of</text>
+<rect x="1347.4" y="354.0" width="54.1" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1374.4" y="366.0" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">made-of</text>
+<rect x="584.8" y="622.2" width="54.1" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="611.8" y="634.2" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">made-by</text>
+<rect x="278.5" y="701.2" width="35.2" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="296.1" y="713.2" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">is-a</text>
+<rect x="280.3" y="748.6" width="35.2" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="297.9" y="760.6" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">is-a</text>
+<rect x="259.4" y="806.2" width="60.4" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="289.6" y="818.2" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">appoints</text>
+<rect x="400.4" y="771.8" width="79.3" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="440.0" y="783.8" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">carries out</text>
+<rect x="440.9" y="885.8" width="66.7" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="474.2" y="897.8" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">has-steps</text>
+<rect x="316.4" y="905.8" width="60.4" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="346.6" y="917.8" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">includes</text>
+<rect x="749.4" y="648.3" width="66.7" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="782.8" y="660.3" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">played-at</text>
+<rect x="694.0" y="801.0" width="91.9" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="740.0" y="813.0" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">often held at</text>
+<rect x="881.0" y="648.3" width="66.7" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="914.4" y="660.3" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">symbol-of</text>
+<rect x="924.0" y="805.2" width="91.9" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="970.0" y="817.2" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">kept alive by</text>
+<rect x="831.3" y="901.1" width="60.4" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="861.5" y="913.1" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">includes</text>
+<rect x="927.2" y="898.8" width="85.6" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="970.0" y="910.8" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">supported-by</text>
+<rect x="1000.5" y="617.6" width="66.7" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1033.8" y="629.6" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">played-by</text>
+<rect x="1286.0" y="698.0" width="85.6" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1328.8" y="710.0" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">strikes-with</text>
+<rect x="1001.7" y="676.8" width="66.7" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1035.0" y="688.8" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">played-in</text>
+<rect x="1314.6" y="800.0" width="60.4" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1344.8" y="812.0" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">produces</text>
+<rect x="1426.2" y="845.8" width="85.6" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1469.0" y="857.8" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">once carried</text>
+<rect x="1329.8" y="465.5" width="60.4" height="16" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1360.0" y="477.5" text-anchor="middle" font-size="11" font-style="italic" fill="#000000">used-for</text>
+<text x="20" y="1066" font-size="11.5" fill="#000000">Sources: Siti Hajar Abdul Halim (2024); PUSAKA (n.d.); Kraftangan Malaysia (n.d.-a, n.d.-b, n.d.-c); Akhi Sahrul (n.d.); Dewan Bahasa dan Pustaka (n.d.); JKKN (2024). Full references in knowledge.js.</text>
+</svg>
