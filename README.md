@@ -33,7 +33,7 @@ Then open the address it prints (usually http://127.0.0.1:8080). `-c-1` turns ca
 | `style.css` | Styling, including dark mode and a stacked layout for phones |
 | `knowledge.js` | Knowledge base: `SYNONYM_GROUPS`, `KNOWLEDGE_BASE` (topics) and `SOURCES` |
 | `bot.js` | Chat logic: NLP pipeline, intents, replies, speech, drum audio, rendering |
-| `assets/avatar.png` | Rubi's avatar (the team's own image) |
+| `assets/rubi-idle.png`, `assets/rubi-speaking.png` | Rubi's sprites with the background removed: idle, and mouth open while speaking (the team's own images; `avatar.png` is the original) |
 | `audio/` | Drum recordings go here (see `audio/PUT_AUDIO_HERE.txt`) |
 
 `knowledge.js` and `bot.js` are loaded with `<script>` tags, not `fetch()`, so the site works straight from `file://`.
@@ -135,7 +135,7 @@ Until these files exist, Rubi plays a synthesised stand-in and says so. The stan
 
 The UMK thesis recommends digital games and simulations to interest young people in the rebana ubi. That supports the Play the drum tab, and is worth mentioning in Chapter 3.
 
-### 5. Avatar (`assets/avatar.png`)
+### 5. Avatar (`assets/rubi-idle.png`, `assets/rubi-speaking.png`)
 
 - [x] Added from `Rubi (Rebana Ubi Avatar).png`. To swap it, replace the file and keep the name.
 - [ ] Credit how the avatar was made in the AI responsible use report (Appendix).

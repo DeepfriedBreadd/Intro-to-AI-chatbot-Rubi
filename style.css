@@ -133,23 +133,42 @@ a { color: var(--accent); word-break: break-all; }
   box-shadow: var(--shadow);
 }
 
-.avatar-frame {
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  overflow: hidden;
-  background: #f1ebe0;
-  border: 4px solid var(--wood);
-  width: 200px;
-  margin: 0 auto;
-  transition: transform 0.2s ease;
+/* Rubi sprite: idle and speaking images stacked, no frame */
+.avatar-stage {
+  position: relative;
+  width: 230px;
+  margin: 24px auto 0;
+  padding-bottom: 14px;          /* room for the ground shadow */
 }
-.avatar-frame img {
+.avatar-sprite {
+  position: relative;
+  aspect-ratio: 480 / 451;
+  transform-origin: 50% 100%;
+  animation: idle-float 3.2s ease-in-out infinite;
+}
+.sprite {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: 50% 52%;
-  transform: scale(1.25);
+  object-fit: contain;
   display: block;
+  filter: drop-shadow(0 3px 2px rgba(60, 35, 15, 0.18));
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.sprite-speaking { opacity: 0; }
+.avatar-panel.is-speaking .avatar-sprite:has(.sprite-speaking) .sprite-idle { opacity: 0; }
+.avatar-panel.is-speaking .sprite-speaking { opacity: 1; }
+
+.avatar-shadow {
+  position: absolute;
+  left: 50%; bottom: 2px;
+  width: 58%; height: 14px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(60, 35, 15, 0.28), transparent);
+  animation: idle-shadow 3.2s ease-in-out infinite;
 }
 .avatar-fallback {
   width: 100%; height: 100%;
@@ -159,21 +178,36 @@ a { color: var(--accent); word-break: break-all; }
   color: var(--wood);
 }
 
-/* Bob gently while speaking */
-.avatar-panel.is-speaking .avatar-frame {
-  animation: talk 0.6s ease-in-out infinite alternate;
-  border-color: var(--accent);
+/* Idle: a slow, gentle float */
+@keyframes idle-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
 }
-@keyframes talk {
-  from { transform: translateY(0) rotate(-1deg); }
-  to   { transform: translateY(-4px) rotate(1deg); }
+@keyframes idle-shadow {
+  0%, 100% { transform: translateX(-50%) scaleX(1); }
+  50%      { transform: translateX(-50%) scaleX(0.94); }
+}
+
+/* Speaking: Rubi hops up and down with a clear squash and stretch and a little sway */
+.avatar-panel.is-speaking .avatar-sprite { animation: bob 0.5s ease-in-out infinite; }
+.avatar-panel.is-speaking .avatar-shadow { animation: bob-shadow 0.5s ease-in-out infinite; }
+@keyframes bob {
+  0%   { transform: translateY(0)     rotate(0deg)    scale(1.08, 0.92); }
+  25%  { transform: translateY(-7%) rotate(-3deg)   scale(0.96, 1.05); }
+  50%  { transform: translateY(-11%) rotate(0deg)    scale(0.97, 1.04); }
+  75%  { transform: translateY(-7%) rotate(3deg)    scale(0.96, 1.05); }
+  100% { transform: translateY(0)     rotate(0deg)    scale(1.08, 0.92); }
+}
+@keyframes bob-shadow {
+  0%, 100% { transform: translateX(-50%) scaleX(1.05); opacity: 1; }
+  50%      { transform: translateX(-50%) scaleX(0.62); opacity: 0.45; }
 }
 
 /* Quick bounce when a drum is hit */
-.avatar-panel.is-hit .avatar-frame { animation: thump 0.25s ease-out; }
+.avatar-panel.is-hit .avatar-sprite { animation: thump 0.25s ease-out; }
 @keyframes thump {
   0%   { transform: scale(1); }
-  40%  { transform: scale(0.94); }
+  40%  { transform: scale(1.06, 0.92); }
   100% { transform: scale(1); }
 }
 
@@ -411,14 +445,6 @@ a { color: var(--accent); word-break: break-all; }
 
 .msg { display: flex; gap: 8px; align-items: flex-end; max-width: 100%; }
 .msg--user { justify-content: flex-end; }
-.msg-avatar {
-  width: 32px; height: 32px;
-  flex: none;
-  border-radius: 50%;
-  object-fit: cover;
-  background: #f1ebe0;
-  border: 2px solid var(--wood);
-}
 
 .bubble {
   max-width: min(560px, 85%);
@@ -558,7 +584,8 @@ a { color: var(--accent); word-break: break-all; }
     gap: 10px 14px;
     padding: 12px;
   }
-  .avatar-frame { width: 96px; border-width: 3px; }
+  .avatar-stage { width: 96px; margin: 14px 0 0; padding-bottom: 8px; }
+  .avatar-shadow { height: 8px; }
   .speech-box::before { display: none; }
   .voice-controls { grid-column: 1 / -1; flex-direction: row; align-items: center; flex-wrap: wrap; }
   .chat { height: 70vh; min-height: 380px; }

@@ -984,6 +984,17 @@ function updateMuteButton() {
   ui.muteBtn.title = speech.muted ? "Turn Rubi's voice on" : "Mute Rubi's voice";
 }
 
+/**
+ * Show the speaking sprite and bob for a time based on the message length.
+ * Used when the reply is not read aloud, so the avatar still reacts.
+ */
+function animateTalking(text) {
+  clearTimeout(speech.idleTimer);
+  ui.avatarPanel.classList.add("is-speaking");
+  const ms = Math.min(Math.max(String(text).length * 40, 900), 3500);
+  speech.idleTimer = setTimeout(() => ui.avatarPanel.classList.remove("is-speaking"), ms);
+}
+
 /** Avatar animation + caption while speaking. */
 function setSpeaking(isSpeaking, sentence) {
   clearTimeout(speech.idleTimer);
@@ -1154,11 +1165,6 @@ function addUserMessage(text) {
 /** Draw one bot message made of parts: text, answer, list, source, suggest, note. */
 function renderBotMessage(parts) {
   const row = el("div", "msg msg--bot");
-  const avatar = el("img", "msg-avatar");
-  avatar.src = "assets/avatar.png";
-  avatar.alt = "";
-  avatar.onerror = () => avatar.remove();
-  row.append(avatar);
 
   const bubble = el("div", "bubble");
   bubble.append(el("span", "msg-name", BOT_NAME));
@@ -1246,6 +1252,8 @@ function botSay(parts) {
     if (spoken) {
       ui.caption.textContent = cleanForSpeech(spoken);
       speak(spoken);
+      // With the voice off (or unavailable) Rubi still "talks" for a moment
+      if (!speech.supported || speech.muted) animateTalking(spoken);
     }
   }).catch(err => console.error("Could not show message:", err));
   return botQueue;
@@ -1269,10 +1277,13 @@ function bindUi() {
   document.title = `${BOT_NAME} | Rebana Ubi Guide`;
   document.querySelectorAll("[data-bot-name]").forEach(node => { node.textContent = BOT_NAME; });
 
-  // Missing avatar file: show the bot's initial instead of a broken image
+  // Missing sprite files: show the bot's initial instead of a broken image,
+  // and keep the idle sprite if only the speaking one is missing
   ui.avatarImg.addEventListener("error", () => {
     ui.avatarImg.replaceWith(el("div", "avatar-fallback", BOT_NAME.charAt(0)));
   });
+  const talkImg = document.getElementById("avatarTalkImg");
+  if (talkImg) talkImg.addEventListener("error", () => talkImg.remove());
 
   ui.form.addEventListener("submit", event => {
     event.preventDefault();

@@ -6,13 +6,13 @@
   <!-- bot.js replaces this title using BOT_NAME -->
   <title>Rubi | Rebana Ubi Guide</title>
   <meta name="description" content="Rubi is a rule-based chatbot that guides you through the rebana ubi, a traditional Malay drum.">
-  <link rel="icon" href="assets/avatar.png">
+  <link rel="icon" href="assets/rubi-idle.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header class="site-header">
-    <img class="site-logo" src="assets/avatar.png" alt="" width="44" height="44">
+    <img class="site-logo" src="assets/rubi-idle.png" alt="" width="44" height="44">
     <div>
       <h1><span data-bot-name>Rubi</span></h1>
       <p class="tagline">Your guide to the rebana ubi</p>
@@ -29,9 +29,14 @@
 
     <!-- Avatar panel: avatar, spoken caption, voice toggle -->
     <aside class="avatar-panel" id="avatarPanel" aria-label="Avatar, voice and drum pads">
-      <div class="avatar-frame">
-        <img id="avatarImg" src="assets/avatar.png"
-             alt="Rubi, a cartoon rebana ubi drum with a smiling face holding two drumsticks">
+      <!-- Two sprites stacked on top of each other: the speaking one shows while Rubi talks -->
+      <div class="avatar-stage">
+        <div class="avatar-sprite" id="avatarSprite">
+          <img class="sprite sprite-idle" id="avatarImg" src="assets/rubi-idle.png"
+               alt="Rubi, a cartoon rebana ubi drum with a smiling face holding two padded beaters">
+          <img class="sprite sprite-speaking" id="avatarTalkImg" src="assets/rubi-speaking.png" alt="" aria-hidden="true">
+        </div>
+        <div class="avatar-shadow" aria-hidden="true"></div>
       </div>
 
       <div class="speech-box">
