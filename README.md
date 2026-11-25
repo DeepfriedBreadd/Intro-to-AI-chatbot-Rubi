@@ -48,7 +48,7 @@ Then open the address it prints (usually http://127.0.0.1:8080). `-c-1` turns ca
 | Rubi speaks first on load | `window.addEventListener("load", startConversation)` |
 | Greeting by computer time (morning / afternoon / evening) | `timeGreeting()` |
 | Asks for the name and validates it (empty, digits only, over 30 characters, symbols) | `handleNameAnswer()`, `validateName()` |
-| Text menu of topics; free-text conversation, no buttons | `showMenu()` |
+| Text menu of five areas (not all 18 topics); typing an area name lists its topics; "all topics" shows everything grouped; free-text conversation, no buttons | `SECTIONS` in `knowledge.js`, `showMenu()`, `findSection()`, `showSection()`, `showAllTopics()` |
 | Lowercasing and tokenising, plus contraction expansion ("whats" → "what is") | `normalise()` |
 | 19 synonym groups (including some Malay words) | `SYNONYM_GROUPS` in `knowledge.js` |
 | Spelling correction with Levenshtein distance | `levenshtein()`, `correctSpelling()` |
@@ -69,7 +69,9 @@ Then open the address it prints (usually http://127.0.0.1:8080). `-c-1` turns ca
 |---|---|
 | *(empty)*, `12345`, a 31+ character name, `@@@` | Name validation messages |
 | `what is rebana ubi?` before giving a name | Question remembered and answered after the name |
-| `menu` | Topic menu |
+| `menu` | The five areas |
+| `the craft`, `show me the culture area`, `sound and play` | The topics in one area |
+| `all topics` | Every topic, grouped by area |
 | `how is it made`, `what is it made of` | Phrase synonyms ("made of" → Materials, "made" → Making) |
 | `tell me the histroy of the rebanna` | Spelling correction with a note showing what was corrected |
 | `tell me more` | Moves to the next linked topic in the semantic network |
@@ -114,7 +116,7 @@ You can rename, add or delete topics. If you do, update every `related` list tha
 
 ### 2. Semantic network (`knowledge.js` → `related`)
 
-The `related` links are a first draft. Change them so they match the nodes and links in your **Chapter 2 semantic network** exactly. Suggestions and "tell me more" follow these links.
+A draft semantic network is in `../semantic-network/`: `rebana-ubi-semantic-network.drawio` (editable in draw.io) and `semantic-network.png`, with `chapter-2-notes.md` explaining every link and its source. Its nodes fall into the five menu areas in `SECTIONS`, and the `related` links are generated from its arrows (two topics are related when an arrow joins their nodes). If you change the diagram, run `python build_network.py --related` there and copy the output into `related`, and update `SECTIONS` to match. Suggestions and "tell me more" follow the `related` links.
 
 ### 3. Sources
 

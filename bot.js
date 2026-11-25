@@ -310,6 +310,37 @@ function buildIndexes() {
       if (!topicNames.has(link)) console.warn(`knowledge.js: "${entry.topic}" links to unknown topic "${link}".`);
     });
   });
+
+  // Areas (SECTIONS): index their aliases and check every topic has one area
+  SECTIONS.forEach(section => {
+    section.aliases.concat(section.name).forEach(alias => {
+      addWords(alias);
+      SECTION_LOOKUP[sectionKey(normalise(alias))] = section;
+    });
+    section.topics.forEach(t => {
+      if (!topicNames.has(t)) console.warn(`knowledge.js: area "${section.name}" lists unknown topic "${t}".`);
+    });
+  });
+  KNOWLEDGE_BASE.forEach(entry => {
+    const count = SECTIONS.filter(sec => sec.topics.includes(entry.topic)).length;
+    if (count !== 1) console.warn(`knowledge.js: topic "${entry.topic}" is in ${count} areas (should be 1).`);
+  });
+}
+
+// Area lookup: alias with filler words removed -> section. Filled in buildIndexes().
+const SECTION_LOOKUP = {};
+const SECTION_FILLER = new Set(["area", "areas", "section", "sections", "topic", "topics", "show", "open", "see",
+  "list", "menu", "go", "into", "inside", "whats", "what", "is", "in", "on", "please", "me", "the", "and", "about", "tell", "of"]);
+
+/** Key used to match an area name: "show me the craft area" -> "craft". */
+function sectionKey(tokens) {
+  return tokens.filter(w => !SECTION_FILLER.has(w)).join(" ");
+}
+
+/** Did the user type the name of an area? Returns the section or null. */
+function findSection(tokens) {
+  const key = sectionKey(tokens);
+  return key ? SECTION_LOOKUP[key] || null : null;
 }
 
 /* =====================================================================
@@ -385,13 +416,24 @@ function handleUserMessage(rawText) {
   }
 
   if (/\b(what do you mean|i do not understand|i am confused|confusing|huh)\b/.test(clean)) {
-    botSay([{ type: "text", text: `Sorry for the confusion, ${state.userName}! Ask me about one part of the drum at a time, such as its history, its parts or how it's played. Type "menu" to see every topic.` }]);
+    botSay([{ type: "text", text: `Sorry for the confusion, ${state.userName}! Ask me about one part of the drum at a time, such as its history, its parts or how it's played. Type "menu" to see my areas.` }]);
     return;
   }
 
-  if (/\b(menu|topics)\b/.test(clean) || (/\b(help|options|list)\b/.test(clean) && tokens.length <= 4) ||
+  const section = findSection(tokens);
+  if (section) {
+    showSection(section);
+    return;
+  }
+
+  if (/\b(all|every|full) (the )?(topics?|list)\b|\btopic list\b/.test(clean)) {
+    showAllTopics();
+    return;
+  }
+
+  if (/\b(menu|topics|areas|sections)\b/.test(clean) || (/\b(help|options|list)\b/.test(clean) && tokens.length <= 4) ||
       /\bwhat (can|do) you (do|know|talk about|tell me)\b/.test(clean)) {
-    showMenu(`Here's everything I can tell you about, ${state.userName}:`);
+    showMenu(`Here's what I can tell you about, ${state.userName}:`);
     return;
   }
 
@@ -551,7 +593,7 @@ function handleNameAnswer(rawText) {
 
   state.userName = result.name;
   state.stage = "chat";
-  showMenu(`Nice to meet you, ${state.userName}! Here's what I can tell you about:`);
+  showMenu(`Nice to meet you, ${state.userName}! I can tell you about five areas of the rebana ubi:`);
 
   if (state.pendingQuestion) {
     const question = state.pendingQuestion;
@@ -604,7 +646,25 @@ function timeGreeting() {
 
 /** Related topics not yet visited (falls back to all related topics). */
 function unvisitedRelated(entry) {
-  const fresh = entry.related.filter(t => !state.visited.has(t));
+  // Walk outwards along the semantic network (breadth-first over `related`):
+  // direct links first, then topics two steps away, and so on. Many topics
+  // only link to Overview (the central node), so this stops "tell me more"
+  // bouncing back to Overview once it has been visited.
+  const seen = new Set([entry.topic]);
+  const fresh = [];
+  let layer = [entry];
+  while (layer.length) {
+    const next = [];
+    layer.forEach(node => node.related.forEach(name => {
+      if (seen.has(name)) return;
+      seen.add(name);
+      const topic = findTopic(name);
+      if (!topic) return;
+      if (!state.visited.has(name)) fresh.push(name);
+      next.push(topic);
+    }));
+    layer = next;
+  }
   return fresh.length ? fresh : entry.related.slice();
 }
 
@@ -612,7 +672,8 @@ function unvisitedRelated(entry) {
 function suggestionText(entry, extra) {
   let options = unvisitedRelated(entry);
   if (extra && !options.includes(extra.topic)) options = [extra.topic].concat(options);
-  return `You could ask me next about ${joinOr(options.slice(0, 3))}, or type "tell me more".`;
+  const shown = options.slice(0, 3).map(t => (t === KNOWLEDGE_BASE[0].topic ? "the overview" : t));
+  return `You could ask me next about ${joinOr(shown)}, or type "tell me more".`;
 }
 
 function correctionNote(corrections) {
@@ -675,12 +736,12 @@ function answerTopic(entry, options = {}) {
 /** "tell me more": walk to the next linked topic in the semantic network. */
 function replyMore() {
   if (!state.lastTopic) {
-    showMenu(`Happy to, ${state.userName}! Pick any topic and ask about it in your own words:`);
+    showMenu(`Happy to, ${state.userName}! Pick an area to start with:`);
     return;
   }
   const next = findTopic(unvisitedRelated(state.lastTopic)[0]);
   if (!next) {
-    showMenu(`Here are all my topics, ${state.userName}:`);
+    showAllTopics();
     return;
   }
   answerTopic(next, { viaMore: true });
@@ -694,11 +755,33 @@ function replyLastTopic() {
   botSay([{ type: "text", text: `We were talking about ${state.lastTopic.topic}, ${state.userName}. ${suggestionText(state.lastTopic)}` }]);
 }
 
+/** The opening menu: five areas (SECTIONS) instead of all 18 topics. */
 function showMenu(intro) {
   botSay([
     { type: "text", text: intro },
-    { type: "list", items: KNOWLEDGE_BASE.map(e => e.topic), speech: "" },
-    { type: "text", text: `Just ask in your own words, for example "How is the rebana ubi made?" or "Why is it called ubi?". To play the drum, open the "Play the drum" tab or type "hit the drum".` }
+    {
+      type: "list",
+      items: SECTIONS.map(sec => ({ label: sec.name, text: sec.description })),
+      speech: joinOr(SECTIONS.map(sec => sec.name.toLowerCase())).replace(" or ", " and ") + "."
+    },
+    { type: "text", text: `Type an area, like "the craft", to see what's in it, or just ask me anything in your own words. You can play the drum on the "Play the drum" tab.` }
+  ]);
+}
+
+/** One area: its topics and an example question. */
+function showSection(section) {
+  botSay([
+    { type: "text", text: `Here's what's in ${section.name.toLowerCase()}, ${state.userName}:` },
+    { type: "list", items: section.topics, speech: "" },
+    { type: "text", text: `Ask about any of these in your own words, for example "${section.example}"` }
+  ]);
+}
+
+/** Every topic, grouped by area ("all topics"). */
+function showAllTopics() {
+  botSay([
+    { type: "text", text: `Here's every topic I know, ${state.userName}, grouped by area:` },
+    { type: "list", items: SECTIONS.map(sec => ({ label: sec.name, text: sec.topics.join(", ") })), speech: "" }
   ]);
 }
 
@@ -763,7 +846,7 @@ function replyFallback(note) {
 
   if (state.fallbackCount >= 3) {
     state.fallbackCount = 0;
-    showMenu("Here's my topic list again in case it helps:");
+    showMenu("Here are my areas again in case they help:");
   }
 }
 
@@ -1082,10 +1165,16 @@ function renderBotMessage(parts) {
 
   parts.forEach(part => {
     if (part.type === "list") {
-      const ul = el("ul", "topic-list");
+      // Items are strings, or { label, text } for the one-per-line area list
+      const ul = el("ul", part.items.some(i => typeof i === "object") ? "area-list" : "topic-list");
       part.items.forEach(item => {
         const li = el("li");
-        li.append(linkify(item));
+        if (typeof item === "object") {
+          li.append(el("strong", null, item.label));
+          li.append(document.createTextNode(`: ${item.text}`));
+        } else {
+          li.append(linkify(item));
+        }
         ul.append(li);
       });
       bubble.append(ul);
